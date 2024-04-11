@@ -40,21 +40,42 @@
       <div class="container top-movie-block">
         <div class="row">
           <!-- first column for image-->
-          <div class="col-12 d-flex justify-content-center col-md-3 p-2 ms-4">
+          <div class="top-movie-image col-12 d-flex justify-content-center col-md-3 p-2 ms-4">
               <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543911/movie-poster_xunegu.png" width="227" height="auto" alt="top movie of the moment">
           </div>
           
           <!-- second column for details-->
-          <div class="col-12 col-md-8 ms-4">
+          <div class="top-movie-details col-12 col-md-8 ms-4">
             <div class="card-body">
                 <h2 class="card-title top-movie-title">The Big Lebowski</h2>
                 <p class="card-text top-movie-description">Jeff "The Dude" Lebowski, mistaken for a millionaire of the same name, seeks restitution for his ruined rug and enlists his bowling buddies to help get it.</p>      
             </div>
-              <div class="d-flex justify-content-end">
+              <div class="d-flex justify-content-end mb-2">
                 <button type="button" class="btn btn-danger details-button mt-2 pt-2 pb-2 px-4 py-4">Détails</button>
               </div>
           </div>
         </div>
+
+      <!-- modal structure-->
+      <div class="modal fade" id="movieDetailsModal" tabindex="-1" aria-labelledby="movieDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="movieDetailsModalLabel">Détails du film</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="close">
+                <span aria-hidden="true">&times</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- will contain movie details-->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end modal structure-->
 
     </section>
 
@@ -69,12 +90,159 @@
       </div>
     </section>
 
+    <!-- best movies imdb-->
     <section>
-      <p>Cette section va contenir la liste des films de la catégorie 1</p>
+      <div class="container">
+        <!-- first row of 3 columns-->
+        <div class="row">
+          <div class="col-6 col-md-3 col-lg-3">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543912/titanic_mgat0g.jpg" class="img-fluid" width="252" height="auto" alt="titanic">
+          </div>
+          <div class="col-6 col-md-3 col-lg-3">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543910/back_to_the_future_gxul7v.jpg" class="img-fluid" width="252" height="auto" alt="retour vers le futur">
+          </div>
+          <!-- not display on mobile-->
+          <div class="col-6 col-md-3 col-lg-3 d-none d-md-block">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543911/scarface_na6odk.jpg" class="img-fluid" width="252" height="auto" alt="scarface">
+          </div>
+        </div>
+
+        <!-- 2nd row of 3 columns-->
+        <div class="row mt-3">
+          <!--not display on mobile-->
+          <div class="col-6 col-md-3 col-lg-3 d-none d-md-block">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543910/pulp_fiction_nznptj.jpg" class="img-fluid" width="252" height="auto" alt="pulp fiction">
+          </div>
+          <!-- only on desktop-->
+          <div class="col-lg-3 d-none d-lg-block">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543909/le_parrain_glvatz.jpg" class="img-fluid" width="252" height="auto" alt="le parrain">
+          </div>
+          <!-- only on desktop-->
+          <div class="col-lg-3 d-none d-lg-block">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543910/alien_xfvcvo.jpg" class="img-fluid" width="252" height="auto" alt="alien">
+          </div>
+        </div>
+      </div>
+
+      <!-- see more button-->
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-md-9 d-flex justify-content-center">
+            <button type="button" class="btn btn-danger details-button mt-2 pt-2 pb-2 px-4 py-4">Voir plus</button>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <section>
-      <p>Cette section va contenir la liste des films de la catégorie 2</p>
+      <!-- best movies title cat1-->
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h2 class="best-movies-cat1">Mystery</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- best movies category 1-->
+    <section>
+      <div class="container">
+        <!-- first row of 3 columns-->
+        <div class="row">
+          <div class="col-6 col-md-3 col-lg-3">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543912/titanic_mgat0g.jpg" class="img-fluid" width="252" height="auto" alt="titanic">
+          </div>
+          <div class="col-6 col-md-3 col-lg-3">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543910/back_to_the_future_gxul7v.jpg" class="img-fluid" width="252" height="auto" alt="retour vers le futur">
+          </div>
+          <!-- not display on mobile-->
+          <div class="col-6 col-md-3 col-lg-3 d-none d-md-block">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543911/scarface_na6odk.jpg" class="img-fluid" width="252" height="auto" alt="scarface">
+          </div>
+        </div>
+
+        <!-- 2nd row of 3 columns-->
+        <div class="row mt-3">
+          <!--not display on mobile-->
+          <div class="col-6 col-md-3 col-lg-3 d-none d-md-block">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543910/pulp_fiction_nznptj.jpg" class="img-fluid" width="252" height="auto" alt="pulp fiction">
+          </div>
+          <!-- only on desktop-->
+          <div class="col-lg-3 d-none d-lg-block">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543909/le_parrain_glvatz.jpg" class="img-fluid" width="252" height="auto" alt="le parrain">
+          </div>
+          <!-- only on desktop-->
+          <div class="col-lg-3 d-none d-lg-block">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543910/alien_xfvcvo.jpg" class="img-fluid" width="252" height="auto" alt="alien">
+          </div>
+        </div>
+      </div>
+
+      <!-- see more button-->
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-md-9 d-flex justify-content-center">
+            <button type="button" class="btn btn-danger details-button mt-2 pt-2 pb-2 px-4 py-4">Voir plus</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <!-- best movies title for cat2-->
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h2 class="best-movies-cat2">Action</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- best movies category 2-->
+    <section>
+      <div class="container">
+        <!-- first row of 3 columns-->
+        <div class="row">
+          <div class="col-6 col-md-3 col-lg-3">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543912/titanic_mgat0g.jpg" class="img-fluid" width="252" height="auto" alt="titanic">
+          </div>
+          <div class="col-6 col-md-3 col-lg-3">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543910/back_to_the_future_gxul7v.jpg" class="img-fluid" width="252" height="auto" alt="retour vers le futur">
+          </div>
+          <!-- not display on mobile-->
+          <div class="col-6 col-md-3 col-lg-3 d-none d-md-block">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543911/scarface_na6odk.jpg" class="img-fluid" width="252" height="auto" alt="scarface">
+          </div>
+        </div>
+
+        <!-- 2nd row of 3 columns-->
+        <div class="row mt-3">
+          <!--not display on mobile-->
+          <div class="col-6 col-md-3 col-lg-3 d-none d-md-block">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543910/pulp_fiction_nznptj.jpg" class="img-fluid" width="252" height="auto" alt="pulp fiction">
+          </div>
+          <!-- only on desktop-->
+          <div class="col-lg-3 d-none d-lg-block">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543909/le_parrain_glvatz.jpg" class="img-fluid" width="252" height="auto" alt="le parrain">
+          </div>
+          <!-- only on desktop-->
+          <div class="col-lg-3 d-none d-lg-block">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543910/alien_xfvcvo.jpg" class="img-fluid" width="252" height="auto" alt="alien">
+          </div>
+        </div>
+      </div>
+
+      <!-- see more button-->
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-md-9 d-flex justify-content-center">
+            <button type="button" class="btn btn-danger details-button mt-2 pt-2 pb-2 px-4 py-4">Voir plus</button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section>
@@ -84,7 +252,7 @@
           <div class="col-3 col-md-3 me-0">
             <h2 class="other-movies">Autres : </h2>
           </div>
-          <div class="col-3 col-md-3 custom-list d-flex align-items-center ms-0">
+          <div class="col-3 col-md-3 custom-list d-flex align-items-center">
             <form action="url">
               <select class="form-list" id="genre-list">
                 <option value="option1">Action</option>
@@ -119,14 +287,56 @@
       </div>
     </section>
 
+    <!-- Choosen category movies-->
     <section>
-      <p>Cette section va contenir la liste des films de la catégorie choisie dans la section précédente</p>
+      <div class="container">
+        <!-- first row of 3 columns-->
+        <div class="row">
+          <div class="col-6 col-md-3 col-lg-3">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543912/titanic_mgat0g.jpg" class="img-fluid" width="252" height="auto" alt="titanic">
+          </div>
+          <div class="col-6 col-md-3 col-lg-3">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543910/back_to_the_future_gxul7v.jpg" class="img-fluid" width="252" height="auto" alt="retour vers le futur">
+          </div>
+          <!-- not display on mobile-->
+          <div class="col-6 col-md-3 col-lg-3 d-none d-md-block">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543911/scarface_na6odk.jpg" class="img-fluid" width="252" height="auto" alt="scarface">
+          </div>
+        </div>
+
+        <!-- 2nd row of 3 columns-->
+        <div class="row mt-3">
+          <!--not display on mobile-->
+          <div class="col-6 col-md-3 col-lg-3 d-none d-md-block">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543910/pulp_fiction_nznptj.jpg" class="img-fluid" width="252" height="auto" alt="pulp fiction">
+          </div>
+          <!-- only on desktop-->
+          <div class="col-lg-3 d-none d-lg-block">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543909/le_parrain_glvatz.jpg" class="img-fluid" width="252" height="auto" alt="le parrain">
+          </div>
+          <!-- only on desktop-->
+          <div class="col-lg-3 d-none d-lg-block">
+            <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543910/alien_xfvcvo.jpg" class="img-fluid" width="252" height="auto" alt="alien">
+          </div>
+        </div>
+      </div>
+
+      <!-- see more button-->
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-md-9 d-flex justify-content-center">
+            <button type="button" class="btn btn-danger details-button mt-2 pt-2 pb-2 px-4 py-4">Voir plus</button>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
+  <script src="script.js"></script>
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 
-  <footer>
-    <p>Ceci est le footer</p>
-  </footer>
 </body>
 
 </html>
