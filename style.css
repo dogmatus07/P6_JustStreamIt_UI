@@ -2,21 +2,27 @@
     background-color: #61787F;
     border: solid black 1px;
   }
-  
- .navbar-nav, .nav-item {
+
+  .navbar-nav,
+  .nav-item {
     font-family: oswald;
     font-weight: 300;
     line-height: 59.28px;
     font-size: 40px;
   }
-  
+
   .top-movie-block {
     border: solid black 6px;
     max-width: 835px;
     margin-left: 6.5%;
   }
 
-  .best-movies, .other-movies, .top-movie-title, .top-movie, .best-movies-cat1, .best-movies-cat2 {
+  .best-movies,
+  .other-movies,
+  .top-movie-title,
+  .top-movie,
+  .best-movies-cat1,
+  .best-movies-cat2 {
     font-family: oswald;
     font-weight: 600;
     line-height: 71.14px;
@@ -46,4 +52,56 @@
     width: 404px;
     height: auto;
   }
-  
+
+  .movie-image-container {
+    position: relative;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+  }
+
+  .movie-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 252px;
+    height: 100px;
+    opacity: 1;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: Oswald;
+    margin-top: 10%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    color: white;
+  }
+
+  .details-link {
+    font-weight: 500;
+    font-family: Oswald;
+    font-size: 14px;
+    line-height: 20.75px;
+    color: white;
+    align-self: flex-end;
+  }
