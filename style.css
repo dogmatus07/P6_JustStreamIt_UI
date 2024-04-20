@@ -105,3 +105,117 @@
     color: white;
     align-self: flex-end;
   }
+
+  .d-modal-movie-title {
+    font-family: Oswald;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 71.14;
+  }
+
+  /* mobile and tablet: image below text */
+.modal-details-text {
+  order: 1; /* Show text first */
+}
+
+.modal-image-container {
+  order: 2; /* Show image on second */
+  margin-top: 20px;
+}
+
+/* PC: image on the right */
+@media (min-width: 992px) {
+  .modal-body .row {
+      flex-direction: row;
+  }
+
+  .modal-details-text,
+  .modal-image-container {
+      order: 0;
+  }
+
+  .modal-image-container {
+      margin-top: 0;
+  }
+}
+
+#modal-movie-title {
+  font-family: Oswald;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 71.14px;
+}
+
+#modal-year-genre, #modal-rating-duration-country, #modal-imdb-score, #modal-directors-title {
+  font-family: Oswald;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 35.57px;
+}
+
+#modal-description, #modal-directors {
+  font-family: Oswald;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 35.57px;
+}
+
+#modal-actors {
+  font-family: Oswald;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 29.64px;
+}
+
+#modal-actors-title {
+  font-family: Oswald;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29.64px;
+}
+
+.close {
+  color: red;
+  font-size: 24px;
+  font-weight: 600;
+  opacity: 1;
+  background-color: transparent;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.btn-secondary {
+  padding: 2px, 4px, 2px, 4px;
+  height: 36px;
+  width: 214px;
+  background: #FA0B0B;
+  font-family: Oswald;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 29.64px;
+  text-align: center;
+  border-radius: 25px;
+  gap: 10px;
+
+}
+
+.modal-content {
+  border-radius: 0.3rem;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .modal-xl {
+      max-width: 90%;
+  }
+}
