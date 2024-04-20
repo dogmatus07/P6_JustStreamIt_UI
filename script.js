@@ -1,5 +1,6 @@
 function loadMovies() {
-    fetch('http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=25')
+    const urlBase = 'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=25'
+    fetch(urlBase)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Response network problem')
@@ -8,7 +9,7 @@ function loadMovies() {
         })
 
         .then(data => {
-            console.log("Nombre de films récupérés", data.results.length);
+            
             displayBestMovieIMDB(data.results);
             displayMostRatedMovie(data.results);
             displayBestFamilyMovies(data.results);
@@ -25,7 +26,6 @@ let bestMovieDetails = {}
 // display best movie with best imdb score
 function displayBestMovieIMDB(movies) {
     //sort movies by imdb score
-    console.log("Nombre de films pour le top movie", movies.length);
     const sortedMovie = movies.sort((a, b) => b.imdb_score - a.imdb_score);
     const bestMovie = sortedMovie[0];
 
@@ -45,7 +45,6 @@ function displayBestMovieIMDB(movies) {
 
 //display most rated movie
 function displayMostRatedMovie(movies) {
-    console.log("Films chargés pour 'Les mieux notés':", movies.length);
     const bestMovies = movies.slice(1, 7);
     const moviesContainer = document.getElementById('best-rated-movies');
     addMoviesToContainer(bestMovies, moviesContainer);
@@ -181,28 +180,18 @@ document.querySelectorAll('.top-movie-details').forEach(button => {
 });
 
 function fillModalWithMovieDetails(movieDetails) {
-    const modalTitle = document.querySelector('#movieDetailsModalLabel');
-    const modalBody = document.querySelector('.modal-body');
+    document.querySelector('#modal-movie-title').textContent = `${movieDetails.title}`;
+    document.querySelector('#modal-year-genre').textContent = `${movieDetails.year} - ${movieDetails.genres.join(', ')}`;
+    document.querySelector('#modal-rating-duration-country').textContent = `PG - ${movieDetails.rated} - ${movieDetails.duration} minutes (${movieDetails.countries.join(', ')})`;
+    document.querySelector('#modal-imdb-score').textContent = `IMDB score : ${movieDetails.imdb_score}/10`;
+    document.querySelector('#modal-directors').textContent = `${movieDetails.directors.join(', ')}`;
+    document.querySelector('#modal-description').textContent = movieDetails.long_description;
+    document.querySelector('#modal-actors').textContent = `${movieDetails.actors.join(', ')}`;
+    document.querySelector('#modal-image').src = movieDetails.image_url;
 
-    // fill with data now
-    modalTitle.textContent = movieDetails.title;
-    modalBody.innerHTML = `
-        <p> <strong>${movieDetails.year} - ${movieDetails.genres.join(', ')}</strong></p>
-        <p> <strong>PG - ${movieDetails.rated} - ${movieDetails.duration} minutes (${movieDetails.countries})</strong></p>
-        <p> <strong>IMDB score: ${movieDetails.imdb_score}/10</strong></p>
-
-        <p> Réalisé par :</p>
-        <p>${movieDetails.directors.join(', ')}</p>
-        <p>${movieDetails.long_description}</p>
-
-        <img src=${movieDetails.image_url}>
-        <p> Avec :</p>
-        <p>${movieDetails.actors.join(', ')}</p>
-    `;
-
-    // display the modal
     var myModal = new bootstrap.Modal(document.getElementById('movieDetailsModal'), {
         keyboard: false
     });
     myModal.show();
+
 }
