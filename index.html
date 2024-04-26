@@ -42,7 +42,7 @@
       <div class="container top-movie-block">
         <div class="row">
           <!-- first column for image-->
-          <div class="top-movie-image col-12 d-flex justify-content-center col-md-3 p-2 ms-4">
+          <div class="top-movie-image col-12 d-flex justify-content-center col-md-3 p-2">
             <img src="" width="227px" height="auto" alt="top movie of the moment">
           </div>
 
@@ -99,8 +99,8 @@
 
     </section>
 
+    <!-- best movies title-->
     <section>
-      <!-- best movies title-->
       <div class="container">
         <div class="row">
           <div class="col">
@@ -109,26 +109,28 @@
         </div>
       </div>
     </section>
+    <!-- End best movies title-->
 
-    <!-- best movies imdb-->
     <section>
-      <div class="container">
-        <!-- first row of 3 columns-->
+      <!-- best movies imdb content-->
+      <div class="container movie-container" id="best-movies">
         <div class="row" id="best-rated-movies">
           <!-- here will be the data-->
         </div>
+      </div>
+      <!-- End best movies imdb content-->
 
         <!-- see more button-->
         <div class="container">
           <div class="row">
-            <div class="col-6 col-md-9 d-flex justify-content-center">
-              <button type="button" class="btn btn-danger details-button mt-2 pt-2 pb-2 px-4 py-4">Voir plus</button>
+            <div class="col-12 col-md-9 d-flex justify-content-center text-center">
+              <button type="button" class="btn btn-danger toggle-button mt-2 pt-2 pb-2 px-4 py-4" data-target="#best-movies">Voir plus</button>
             </div>
           </div>
         </div>
-
+        <!-- End see more button-->
     </section>
-
+    
     <section>
       <!-- best movies title cat1 Family-->
       <div class="container">
@@ -138,24 +140,27 @@
           </div>
         </div>
       </div>
+    <!-- End best movies title cat1 Family-->
     </section>
 
-    <!-- best movies category 1 Family-->
     <section>
-      <div class="container">
+      <!-- best movies category 1 Family-->
+      <div class="container movie-container" id="best-movies-cat1">
         <div class="row" id="best-family-movies">
           <!-- here will be the data-->
         </div>
       </div>
+      <!-- End best movies category 1 Family-->
 
       <!-- see more button-->
       <div class="container">
         <div class="row">
-          <div class="col-6 col-md-9 d-flex justify-content-center">
-            <button type="button" class="btn btn-danger details-button mt-2 pt-2 pb-2 px-4 py-4">Voir plus</button>
+          <div class="col-12 col-md-9 d-flex justify-content-center text-center">
+            <button type="button" class="btn btn-danger details-button toggle-button mt-2 pt-2 pb-2 px-4 py-4" data-target="#best-movies-cat1">Voir plus</button>
           </div>
         </div>
       </div>
+      <!-- End see more button-->
     </section>
 
     <section>
@@ -167,28 +172,31 @@
           </div>
         </div>
       </div>
+      <!-- End best movies title for cat2 Crime-->
     </section>
-
-    <!-- best movies category 2 Crime-->
+    
     <section>
-      <div class="container">
+      <!-- best movies category 2 Crime-->
+      <div class="container movie-container" id="best-movies-cat2">
         <div class="row" id="best-crime-movies">
           <!-- here will be the data-->
         </div>
       </div>
+      <!-- End best movies category 2 Crime-->
 
       <!-- see more button-->
       <div class="container">
         <div class="row">
-          <div class="col-6 col-md-9 d-flex justify-content-center">
-            <button type="button" class="btn btn-danger details-button mt-2 pt-2 pb-2 px-4 py-4">Voir plus</button>
+          <div class="col-12 col-md-9 d-flex justify-content-center text-center">
+            <button type="button" class="btn btn-danger toggle-button pt-2 pb-2 px-4 py-4" data-target="#best-movies-cat2">Voir plus</button>
           </div>
         </div>
       </div>
+      <!-- End see more button-->
     </section>
 
     <section>
-      <!-- best movies title-->
+      <!-- best movies title other-->
       <div class="container">
         <div class="row">
           <div class="col-3 col-md-3 me-0">
@@ -227,26 +235,29 @@
           </div>
         </div>
       </div>
+    <!--End best movies title other-->
     </section>
 
-    <!-- Choosen category movies-->
     <section>
-
-      <div class="container">
+      <!-- Choosen category movies-->
+      <div class="container movie-container" id="best-category-movies-other">
         <div class="row" id="best-form-movies">
           <!-- here will be the data-->
         </div>
       </div>
+      <!-- End Choosen category movies-->
 
       <!-- see more button-->
       <div class="container">
         <div class="row">
-          <div class="col-6 col-md-9 d-flex justify-content-center">
-            <button type="button" class="btn btn-danger details-button mt-2 pt-2 pb-2 px-4 py-4">Voir plus</button>
+          <div class="col-12 col-md-9 d-flex justify-content-center text-center">
+            <button type="button" class="btn btn-danger toggle-button details-button mt-2 pt-2 pb-2 px-4 py-4" data-target="#best-category-movies-other">Voir plus</button>
           </div>
         </div>
       </div>
+      <!-- End see more button-->
     </section>
+
   </main>
   <script src="script.js"></script>
   <!-- Bootstrap JS, Popper.js, and jQuery -->
@@ -255,5 +266,4 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 
 </body>
-
 </html>
