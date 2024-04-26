@@ -1,3 +1,12 @@
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    font-family: 'Oswald', sans-serif;
+  }
+
+  /*Style for mobile first*/
   .top-nav {
     background-color: #61787F;
     border: solid black 1px;
@@ -7,14 +16,14 @@
   .nav-item {
     font-family: oswald;
     font-weight: 300;
-    line-height: 59.28px;
-    font-size: 40px;
+    line-height: 2rem;
+    font-size: 1.5rem;
   }
 
   .top-movie-block {
     border: solid black 6px;
-    max-width: 835px;
-    margin-left: 6.5%;
+    max-width: 95%;
+    margin-left: 0 auto;
   }
 
   .best-movies,
@@ -25,37 +34,53 @@
   .best-movies-cat2 {
     font-family: oswald;
     font-weight: 600;
-    line-height: 71.14px;
-    font-size: 48px;
+    line-height: 2.2rem;
+    font-size: 1.5rem;
   }
 
   .top-movie-description {
     font-family: oswald;
     font-weight: 200;
-    font-size: 28px;
-    line-height: 41.5px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-right: 1rem;
   }
 
   .details-button {
-    border-radius: 25px;
+    border-radius: 1.56rem;
     font-family: oswald;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 35.57px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-right: 2rem;
+  }
+
+  .toggle-button {
+    margin: 0 auto;
+    border-radius: 1.56rem;
+    font-family: oswald;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .form-list {
     font-family: oswald;
     font-weight: 600;
-    font-size: 36px;
-    line-height: 53.35px;
-    width: 404px;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    width: 100%;
     height: auto;
+    padding: 0.4rem;
   }
 
   .movie-image-container {
     position: relative;
+    max-width: 65%;
     width: 100%;
+    height: auto;
+    margin: 0 auto;
     display: block;
     overflow: hidden;
   }
@@ -74,14 +99,15 @@
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
     color: white;
-    width: 252px;
+    width: 100%;
+    max-width: 252px;
     height: 100px;
     opacity: 1;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
     font-family: Oswald;
-    margin-top: 10%;
-    padding: 20px;
+    margin: 10% auto 0;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -92,7 +118,8 @@
   .text {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     color: white;
   }
@@ -100,27 +127,21 @@
   .details-link {
     font-weight: 500;
     font-family: Oswald;
-    font-size: 14px;
-    line-height: 20.75px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    align-self: center;
     color: white;
-    align-self: flex-end;
+    margin-top: 1rem;
   }
 
-  .d-modal-movie-title {
-    font-family: Oswald;
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 71.14;
-  }
-
-  /* mobile and tablet: image below text */
+    /* mobile and tablet: image below text */
 .modal-details-text {
   order: 1; /* Show text first */
 }
 
 .modal-image-container {
   order: 2; /* Show image on second */
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 /* PC: image on the right */
@@ -139,83 +160,236 @@
   }
 }
 
-#modal-movie-title {
-  font-family: Oswald;
-  font-weight: 600;
-  font-size: 48px;
-  line-height: 71.14px;
-}
+  #modal-movie-title {
+    font-family: Oswald;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
 
-#modal-year-genre, #modal-rating-duration-country, #modal-imdb-score, #modal-directors-title {
-  font-family: Oswald;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 35.57px;
-}
+  .d-modal-movie-title {
+    font-family: Oswald;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
 
-#modal-description, #modal-directors {
-  font-family: Oswald;
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 35.57px;
-}
+  #modal-year-genre, #modal-rating-duration-country, #modal-imdb-score, #modal-directors-title {
+    font-family: Oswald;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
 
-#modal-actors {
-  font-family: Oswald;
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 29.64px;
-}
+  #modal-description, #modal-directors {
+    font-family: Oswald;
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
 
-#modal-actors-title {
-  font-family: Oswald;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 29.64px;
-}
+  #modal-actors {
+    font-family: Oswald;
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+  }
 
-.close {
-  color: red;
-  font-size: 24px;
-  font-weight: 600;
-  opacity: 1;
-  background-color: transparent;
-}
+  #modal-actors-title {
+    font-family: Oswald;
+    font-weight: 400;
+    font-size: 1.rem;
+    line-height: 1.5rem;
+  }
 
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  .close {
+    color: red;
+    font-size: 3rem;
+    font-weight: 600;
+    opacity: 1;
+    background-color: white;
+    border: none;
+  }
 
-.modal-footer {
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-}
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.btn-secondary {
-  padding: 2px, 4px, 2px, 4px;
-  height: 36px;
-  width: 214px;
-  background: #FA0B0B;
-  font-family: Oswald;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 29.64px;
-  text-align: center;
-  border-radius: 25px;
-  gap: 10px;
+  .modal-footer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
 
-}
+  .btn-secondary {
+    padding: 2px 4px;
+    height: 36px;
+    width: 214px;
+    background: #FA0B0B;
+    font-family: Oswald;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.85rem;
+    text-align: center;
+    border-radius: 1.56rem;
+    gap: 0.62rem;
+  }
 
-.modal-content {
-  border-radius: 0.3rem;
-  padding: 20px;
-}
+  .modal-content {
+    border-radius: 0.3rem;
+    padding: 1.25rem;
+  }
 
-@media (min-width: 768px) {
-  .modal-xl {
+  /*Style for tablets*/
+  @media (min-width: 768px) {
+    .navbar-nav, .nav-item {
+      line-height: 2.5rem;
+      font-size: 2rem;
+  }
+    .best-movies,
+    .other-movies,
+    .top-movie-title,
+    .top-movie,
+    .best-movies-cat1,
+    .best-movies-cat2 {
+      line-height: 2.5rem;
+      font-size: 2rem;
+    }
+
+    .top-movie-description {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+
+    .details-button, .toggle-button {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+
+    .form-list {
+      font-size: 1.75rem;
+      line-height: 2.5rem;
+    }
+
+    .modal-xl {
       max-width: 90%;
+    }
+  }
+
+  /*Style for Desktop*/
+  @media (min-width: 992px) {
+    .navbar-nav, .nav-item {
+      line-height: 3.71rem;
+      font-size: 2.5rem;
+  }
+    .top-movie-block {
+      max-width: 90%;
+    }
+
+    .best-movies,
+    .other-movies,
+    .top-movie-title,
+    .top-movie,
+    .best-movies-cat1,
+    .best-movies-cat2 {
+      line-height: 4.44rem;
+      font-size: 3rem;
+    }
+
+    .top-movie-description {
+      font-size: 1.75rem;
+      line-height: 2.6rem;
+    }
+
+    .details-button, .toggle-button {
+      font-size: 1.5rem;
+      line-height: 2.22rem;
+    }
+
+    .form-list {
+      font-size: 2.25rem;
+      line-height: 3.34rem;
+    }
+
+    .movie-image-container {
+      max-width: 252px;
+    }
+
+    .overlay {
+      width: 252px;
+      height: 100px;
+    }
+
+    .text {
+      align-items: flex-start;
+    }
+
+    .details-link {
+      font-size: 0.87rem;
+      line-height: 1.3rem;
+      align-self: flex-end;
+    }
+
+    #modal-movie-title {
+      font-size: 3rem;
+      line-height: 4.44rem;
+    }
+
+    .d-modal-movie-title {
+      font-size: 3rem;
+      line-height: 4.44rem;
+    }
+
+    #modal-year-genre, #modal-rating-duration-country, #modal-imdb-score, #modal-directors-title {
+      font-size: 1.5rem;
+      line-height: 2.22rem;
+    }
+
+    #modal-description, #modal-directors {
+      font-size: 1.5rem;
+      line-height: 2.22rem;
+    }
+
+    #modal-actors {
+      font-size: 1.25rem;
+      line-height: 1.85rem;
+    }
+
+    #modal-actors-title {
+      font-size: 1.25rem;
+      line-height: 1.85rem;
+    }
+  }
+
+/* handle the visibility*/
+.movie-container .movie-item {
+  display: none; /* Initially hide all */
+}
+
+.movie-container.show-all .movie-item {
+  display: block; /* Show all when 'show-all' is active */
+}
+
+/* Responsive visibility without 'show-all' */
+@media (max-width: 767px) {
+  .movie-container .movie-item:nth-child(-n+2) {
+      display: block;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .movie-container .movie-item:nth-child(-n+4) {
+      display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .movie-container .movie-item {
+      display: block; /* Show all by default on desktop, hide toggle button */
+  }
+  .toggle-button {
+      display: none;
   }
 }
