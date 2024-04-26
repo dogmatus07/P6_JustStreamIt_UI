@@ -1,24 +1,49 @@
-function loadMovies() {
+document.addEventListener('DOMContentLoaded', function () {
+    setupEventListeners();
+    loadInitialData();
+    setupToggleButtons();
+});
+
+function setupEventListeners() {
+    document.getElementById('genre-list').addEventListener('change', function () {
+        getMoviesByGenre(this.value);
+    });
+
+    document.addEventListener('click', function (e) {
+        if (e.target.classList.contains('details-link')) {
+            const movieId = e.target.getAttribute('data-id');
+            showDetails(movieId);
+        }
+    });
+
+    window.addEventListener('resize', function() {
+    });
+}
+
+function loadInitialData() {
+    loadMovies().then(() => {
+        document.getElementById('genre-list').value = "Action";
+        return getMoviesByGenre("Action");
+    }).catch(error => console.error('Failed to load initial data:', error));    
+}
+
+async function loadMovies() {
     const urlBase = 'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=25'
-    fetch(urlBase)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Response network problem')
-            }
-            return response.json()
-        })
-
-        .then(data => {
-            
-            displayBestMovieIMDB(data.results);
-            displayMostRatedMovie(data.results);
-            displayBestFamilyMovies(data.results);
-            displayBestCrimeMovies(data.results);
-        })
-
-        .catch(error => {
-            console.error('Error with fetch operation')
-        });
+    try {
+        const response = await fetch(urlBase);
+        if (!response.ok) {
+            throw new Error('Response network problem');
+        }
+        const data = await response.json();
+        displayBestMovieIMDB(data.results);
+        displayMostRatedMovie(data.results);
+        displayBestFamilyMovies(data.results);
+        displayBestCrimeMovies(data.results);
+        return await Promise.resolve();
+    } catch (error) {
+        console.error('Error with fetch operation');
+        return await Promise.reject();
+    }
 }
 
 let bestMovieDetails = {}
@@ -56,7 +81,7 @@ function displayBestFamilyMovies(movies) {
     fetch(url)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Response error from fetch action movies')
+                throw new Error('Response error from fetch movies')
             }
             return response.json();
         })
@@ -66,7 +91,7 @@ function displayBestFamilyMovies(movies) {
             addMoviesToContainer(bestFamilyMovies, familyMoviesContainer);
         })
         .catch(error => {
-            console.error('Error during fetch action movies');
+            console.error('Error during fetch movies');
         });
 }
 
@@ -76,7 +101,7 @@ function displayBestCrimeMovies(movies) {
     fetch(url)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Response error from fetch action movies')
+                throw new Error('Response error from fetch movies')
             }
             return response.json();
         })
@@ -86,7 +111,7 @@ function displayBestCrimeMovies(movies) {
             addMoviesToContainer(bestCrimeMovies, crimeMoviesContainer);
         })
         .catch(error => {
-            console.error('Error during fetch action movies');
+            console.error('Error during fetch movies');
         });
 }
 
@@ -113,14 +138,10 @@ function addMoviesToContainer(movies, container) {
     container.innerHTML = '';
     movies.forEach((movie, index) => {
         const movieElement = document.createElement('div');
-        let colClass = 'col-12 col-md-6 col-lg-4';
-        if (index >= 2) colClass += ' d-none d-sm-block'; //hide on mobile 3rd movie and plus
-        if (index >= 4) colClass += ' d-none d-lg-block'; //hide on tablet 5th and 6th movie
-
-        movieElement.className = colClass;
+        movieElement.className = 'col-12 col-md-6 col-lg-4 movie-item';
         movieElement.innerHTML = `
             <div class="movie-image-container">
-                <img src="${movie.image_url}" class="img-fluid mb-3" alt="${movie.title}" width="252px" height="auto">
+                <img src="${movie.image_url}" class="img-fluid mb-3" alt="${movie.title}">
                 <div class="overlay">
                     <div class="text">
                     ${movie.title}<br><a href="#" class="details-link" data-id="${movie.id}">Details</a>
@@ -128,8 +149,27 @@ function addMoviesToContainer(movies, container) {
                 </div>
             </div>
         `;
-
         container.appendChild(movieElement)
+    });
+}
+
+function toggleMovies(container, button) {
+    const isShowingAll = container.classList.contains('show-all');
+    if (isShowingAll) {
+        container.classList.remove('show-all');
+        button.textContent = 'Voir plus';
+    } else {
+        container.classList.add('show-all');
+        button.textContent = 'Voir moins';
+    }
+}
+
+function setupToggleButtons() {
+    document.querySelectorAll('.toggle-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const container = document.querySelector(button.getAttribute('data-target'));
+            toggleMovies(container, button);
+        });
     });
 }
 
@@ -150,25 +190,6 @@ function showDetails(movieId) {
             console.error('Error fetching details:', error);
         });
 }
-
-//call to function
-document.addEventListener('DOMContentLoaded', function () {
-    loadMovies();
-
-    document.getElementById('genre-list').value = "Action";
-    getMoviesByGenre("Action");
-
-    document.getElementById('genre-list').addEventListener('change', function () {
-        getMoviesByGenre(this.value);
-    });
-
-    document.addEventListener('click', function(e) {
-        if(e.target.classList.contains('details-link')) {
-            const movieId = e.target.getAttribute('data-id');
-            showDetails(movieId);
-        }
-    });
-});
 
 //details button
 document.querySelectorAll('.top-movie-details').forEach(button => {
