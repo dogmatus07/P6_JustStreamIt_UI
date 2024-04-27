@@ -27,6 +27,7 @@ function loadInitialData() {
     }).catch(error => console.error('Failed to load initial data:', error));    
 }
 
+//load all movies sorted by imdb score
 async function loadMovies() {
     const urlBase = 'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=25'
     try {
@@ -134,6 +135,7 @@ function getMoviesByGenre(genre) {
         });
 }
 
+//utility function to insert data into containers
 function addMoviesToContainer(movies, container) {
     container.innerHTML = '';
     movies.forEach((movie, index) => {
@@ -153,6 +155,7 @@ function addMoviesToContainer(movies, container) {
     });
 }
 
+//handling toggle buttons
 function toggleMovies(container, button) {
     const isShowingAll = container.classList.contains('show-all');
     if (isShowingAll) {
@@ -164,6 +167,7 @@ function toggleMovies(container, button) {
     }
 }
 
+//event listener for toggle button
 function setupToggleButtons() {
     document.querySelectorAll('.toggle-button').forEach(button => {
         button.addEventListener('click', function() {
@@ -200,6 +204,7 @@ document.querySelectorAll('.top-movie-details').forEach(button => {
     });
 });
 
+//fill modal window with movie details
 function fillModalWithMovieDetails(movieDetails) {
     document.querySelector('#modal-movie-title').textContent = `${movieDetails.title}`;
     document.querySelector('#modal-year-genre').textContent = `${movieDetails.year} - ${movieDetails.genres.join(', ')}`;
