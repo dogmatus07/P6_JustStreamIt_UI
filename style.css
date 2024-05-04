@@ -23,7 +23,8 @@
   .top-movie-block {
     border: solid black 6px;
     max-width: 95%;
-    margin-left: 0 auto;
+    display: flex;
+    justify-content: center;
   }
 
   .best-movies,
@@ -134,31 +135,33 @@
     margin-top: 1rem;
   }
 
-    /* mobile and tablet: image below text */
-.modal-details-text {
-  order: 1; /* Show text first */
-}
+  /* mobile and tablet: image below text */
+  .modal-details-text {
+    order: 1;
+    /* Show text first */
+  }
 
-.modal-image-container {
-  order: 2; /* Show image on second */
-  margin-top: 1.25rem;
-}
+  .modal-image-container {
+    order: 2;
+    /* Show image on second */
+    margin-top: 1.25rem;
+  }
 
-/* PC: image on the right */
-@media (min-width: 992px) {
-  .modal-body .row {
+  /* PC: image on the right */
+  @media (min-width: 992px) {
+    .modal-body .row {
       flex-direction: row;
-  }
+    }
 
-  .modal-details-text,
-  .modal-image-container {
+    .modal-details-text,
+    .modal-image-container {
       order: 0;
-  }
+    }
 
-  .modal-image-container {
+    .modal-image-container {
       margin-top: 0;
+    }
   }
-}
 
   #modal-movie-title {
     font-family: Oswald;
@@ -174,14 +177,18 @@
     line-height: 3rem;
   }
 
-  #modal-year-genre, #modal-rating-duration-country, #modal-imdb-score, #modal-directors-title {
+  #modal-year-genre,
+  #modal-rating-duration-country,
+  #modal-imdb-score,
+  #modal-directors-title {
     font-family: Oswald;
     font-weight: 600;
     font-size: 1.2rem;
     line-height: 1.8rem;
   }
 
-  #modal-description, #modal-directors {
+  #modal-description,
+  #modal-directors {
     font-family: Oswald;
     font-weight: 300;
     font-size: 1.2rem;
@@ -198,7 +205,7 @@
   #modal-actors-title {
     font-family: Oswald;
     font-weight: 400;
-    font-size: 1.rem;
+    font-size: 1rem;
     line-height: 1.5rem;
   }
 
@@ -244,10 +251,13 @@
 
   /*Style for tablets*/
   @media (min-width: 768px) {
-    .navbar-nav, .nav-item {
+
+    .navbar-nav,
+    .nav-item {
       line-height: 2.5rem;
       font-size: 2rem;
-  }
+    }
+
     .best-movies,
     .other-movies,
     .top-movie-title,
@@ -263,7 +273,8 @@
       line-height: 1.75rem;
     }
 
-    .details-button, .toggle-button {
+    .details-button,
+    .toggle-button {
       font-size: 1.25rem;
       line-height: 1.75rem;
     }
@@ -280,10 +291,13 @@
 
   /*Style for Desktop*/
   @media (min-width: 992px) {
-    .navbar-nav, .nav-item {
+
+    .navbar-nav,
+    .nav-item {
       line-height: 3.71rem;
       font-size: 2.5rem;
-  }
+    }
+
     .top-movie-block {
       max-width: 65%;
     }
@@ -303,7 +317,8 @@
       line-height: 2.6rem;
     }
 
-    .details-button, .toggle-button {
+    .details-button,
+    .toggle-button {
       font-size: 1.5rem;
       line-height: 2.22rem;
     }
@@ -342,12 +357,16 @@
       line-height: 4.44rem;
     }
 
-    #modal-year-genre, #modal-rating-duration-country, #modal-imdb-score, #modal-directors-title {
+    #modal-year-genre,
+    #modal-rating-duration-country,
+    #modal-imdb-score,
+    #modal-directors-title {
       font-size: 1.5rem;
       line-height: 2.22rem;
     }
 
-    #modal-description, #modal-directors {
+    #modal-description,
+    #modal-directors {
       font-size: 1.5rem;
       line-height: 2.22rem;
     }
@@ -363,33 +382,37 @@
     }
   }
 
-/* handle the visibility*/
-.movie-container .movie-item {
-  display: none; /* Initially hide all */
-}
-
-.movie-container.show-all .movie-item {
-  display: block; /* Show all when 'show-all' is active */
-}
-
-/* Responsive visibility without 'show-all' */
-@media (max-width: 767px) {
-  .movie-container .movie-item:nth-child(-n+2) {
-      display: block;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .movie-container .movie-item:nth-child(-n+4) {
-      display: block;
-  }
-}
-
-@media (min-width: 992px) {
+  /* handle the visibility*/
   .movie-container .movie-item {
-      display: block; /* Show all by default on desktop, hide toggle button */
+    display: none;
+    /* Initially hide all */
   }
-  .toggle-button {
+
+  .movie-container.show-all .movie-item {
+    display: block;
+    /* Show all when 'show-all' is active */
+  }
+
+  /* Responsive visibility without 'show-all' */
+  @media (max-width: 767px) {
+    .movie-container .movie-item:nth-child(-n+2) {
+      display: block;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    .movie-container .movie-item:nth-child(-n+4) {
+      display: block;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .movie-container .movie-item {
+      display: block;
+      /* Show all by default on desktop, hide toggle button */
+    }
+
+    .toggle-button {
       display: none;
+    }
   }
-}
