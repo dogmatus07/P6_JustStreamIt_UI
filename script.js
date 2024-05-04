@@ -16,7 +16,7 @@ function setupEventListeners() {
         }
     });
 
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
     });
 }
 
@@ -24,12 +24,12 @@ function loadInitialData() {
     loadMovies().then(() => {
         document.getElementById('genre-list').value = "Action";
         return getMoviesByGenre("Action");
-    }).catch(error => console.error('Failed to load initial data:', error));    
+    }).catch(error => console.error('Failed to load initial data:', error));
 }
 
 //load all movies sorted by imdb score
 async function loadMovies() {
-    const urlBase = 'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=25'
+    const urlBase = 'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=25';
     try {
         const response = await fetch(urlBase);
         if (!response.ok) {
@@ -47,7 +47,7 @@ async function loadMovies() {
     }
 }
 
-let bestMovieDetails = {}
+let bestMovieDetails = {};
 
 // display best movie with best imdb score
 function displayBestMovieIMDB(movies) {
@@ -78,11 +78,11 @@ function displayMostRatedMovie(movies) {
 
 // Display best category 1 movies Family
 function displayBestFamilyMovies(movies) {
-    const url = 'http://localhost:8000/api/v1/titles/?genre=Family&sort_by=-imdb_score&page_size=6'
+    const url = 'http://localhost:8000/api/v1/titles/?genre=Family&sort_by=-imdb_score&page_size=6';
     fetch(url)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Response error from fetch movies')
+                throw new Error('Response error from fetch movies');
             }
             return response.json();
         })
@@ -98,11 +98,11 @@ function displayBestFamilyMovies(movies) {
 
 // display best category 2 movies Crime
 function displayBestCrimeMovies(movies) {
-    const url = 'http://localhost:8000/api/v1/titles/?genre=Crime&sort_by=-imdb_score&page_size=6'
+    const url = 'http://localhost:8000/api/v1/titles/?genre=Crime&sort_by=-imdb_score&page_size=6';
     fetch(url)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Response error from fetch movies')
+                throw new Error('Response error from fetch movies');
             }
             return response.json();
         })
@@ -118,7 +118,7 @@ function displayBestCrimeMovies(movies) {
 
 // display best movies by user choice genre
 function getMoviesByGenre(genre) {
-    const url = `http://localhost:8000/api/v1/titles/?genre=${genre}&sort_by=-imdb_score&page_size=6`
+    const url = `http://localhost:8000/api/v1/titles/?genre=${genre}&sort_by=-imdb_score&page_size=6`;
     fetch(url)
         .then(response => {
             if (!response.ok) {
@@ -143,7 +143,7 @@ function addMoviesToContainer(movies, container) {
         movieElement.className = 'col-12 col-md-6 col-lg-4 movie-item';
         movieElement.innerHTML = `
             <div class="movie-image-container">
-                <img src="${movie.image_url}" class="img-fluid mb-3" alt="${movie.title}">
+                <img src="${movie.image_url}" class="img-fluid mb-3" alt="${movie.title}" onerror="handleImageError(this)">
                 <div class="overlay">
                     <div class="text">
                     ${movie.title}<br><a href="#" class="details-link" data-id="${movie.id}">Details</a>
@@ -151,8 +151,13 @@ function addMoviesToContainer(movies, container) {
                 </div>
             </div>
         `;
-        container.appendChild(movieElement)
+        container.appendChild(movieElement);
     });
+}
+
+function handleImageError(img) {
+    img.onerror = null;
+    img.src = "https://i.postimg.cc/nVYLwqy8/image-not-found.png";
 }
 
 //handling toggle buttons
@@ -170,7 +175,7 @@ function toggleMovies(container, button) {
 //event listener for toggle button
 function setupToggleButtons() {
     document.querySelectorAll('.toggle-button').forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             const container = document.querySelector(button.getAttribute('data-target'));
             toggleMovies(container, button);
         });
