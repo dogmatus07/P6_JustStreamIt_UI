@@ -20,7 +20,7 @@
       <div class="container top-nav text-white">
         <a class="navbar-brand" href="#">
           <img src="https://res.cloudinary.com/duxvzxpp4/image/upload/v1711543911/logo_light_vfmegy.png" width="127"
-            height="auto" alt="logo">
+            alt="logo">
         </a>
         <div class="navbar-nav me-auto">
           <h2 class="nav-item nav-link active">Vidéos à la demande</h2>
@@ -38,70 +38,72 @@
           </div>
         </div>
       </div>
-
+    </section>
+    <section>
       <!-- movie top block-->
       <div class="container top-movie-block">
-        <div class="row">
+        <div class="row justify-content-center">
           <!-- first column for image-->
           <div class="top-movie-image col-12 d-flex justify-content-center col-md-3 p-2">
-            <img src="" width="227px" height="auto" alt="top movie of the moment">
+            <img src="temp" width="227" alt="top movie of the moment">
           </div>
 
           <!-- second column for details-->
           <div class="top-movie-details col-12 col-md-8 ms-4">
             <div class="card-body">
-              <h2 class="card-title top-movie-title"></h2>
-              <p class="card-text top-movie-description"></p>
+              <h2 class="card-title top-movie-title">Movie Title</h2>
+              <p class="card-text top-movie-description">Movie Description</p>
             </div>
             <div class="d-flex justify-content-end mb-2">
               <button type="button" class="btn btn-danger details-button mt-2 pt-2 pb-2 px-4 py-4">Détails</button>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- modal structure-->
-        <div class="modal fade" id="movieDetailsModal" tabindex="-1" aria-labelledby="movieDetailsModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="movieDetailsModalLabel">Détails du film</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-md-8 modal-details-text">
-                      <h2 id="modal-movie-title"></h2>
-                      <h3 id="modal-year-genre"></h3>
-                      <h3 id="modal-rating-duration-country"></h3>
-                      <h3 id="modal-imdb-score"></h3>
-                      <h4 id="modal-directors-title">Réalisé par :</h4>
-                      <p id="modal-directors"></p>
-                      <p id="modal-description"></p>
-                      <h4 id="modal-actors-title">Avec :</h4>
-                      <p id="modal-actors"></p>
-                    </div>
-                    <div class="col-md-4 modal-image-container">
-                      <img id="modal-image" src="" alt="Movie Poster" class="img-fluid">
-                    </div>
+    <section>
+      <!-- modal structure-->
+      <div class="modal fade" id="movieDetailsModal" tabindex="-1" aria-labelledby="movieDetailsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="movieDetailsModalLabel">Détails du film</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-8 modal-details-text">
+                    <h2 id="modal-movie-title">Movie Title</h2>
+                    <h3 id="modal-year-genre">Year & Genre</h3>
+                    <h3 id="modal-rating-duration-country">Rating Duration Country</h3>
+                    <h3 id="modal-imdb-score">Imdb Score</h3>
+                    <h4 id="modal-directors-title">Réalisé par :</h4>
+                    <p id="modal-directors">Directors</p>
+                    <p id="modal-description">Description</p>
+                    <h4 id="modal-actors-title">Avec :</h4>
+                    <p id="modal-actors">Actors</p>
+                  </div>
+                  <div class="col-md-4 modal-image-container">
+                    <img id="modal-image" src="temp" alt="Movie Poster" class="img-fluid">
                   </div>
                 </div>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
             </div>
           </div>
         </div>
-        <!-- end modal structure-->
-
+      </div>
+      <!-- end modal structure-->
     </section>
-
-    <!-- best movies title-->
     <section>
+      <!-- best movies title-->
       <div class="container">
         <div class="row">
           <div class="col">
@@ -112,26 +114,25 @@
     </section>
     <!-- End best movies title-->
 
-    <section>
-      <!-- best movies imdb content-->
-      <div class="container movie-container" id="best-movies">
-        <div class="row" id="best-rated-movies">
-          <!-- here will be the data-->
+    <!-- best movies imdb content-->
+    <div class="container movie-container" id="best-movies">
+      <div class="row" id="best-rated-movies">
+        <!-- here will be the data-->
+      </div>
+    </div>
+    <!-- End best movies imdb content-->
+
+    <!-- see more button-->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-9 d-flex justify-content-center text-center">
+          <button type="button" class="btn btn-danger toggle-button mt-2 pt-2 pb-2 px-4 py-4"
+            data-target="#best-movies">Voir plus</button>
         </div>
       </div>
-      <!-- End best movies imdb content-->
+    </div>
+    <!-- End see more button-->
 
-        <!-- see more button-->
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-9 d-flex justify-content-center text-center">
-              <button type="button" class="btn btn-danger toggle-button mt-2 pt-2 pb-2 px-4 py-4" data-target="#best-movies">Voir plus</button>
-            </div>
-          </div>
-        </div>
-        <!-- End see more button-->
-    </section>
-    
     <section>
       <!-- best movies title cat1 Family-->
       <div class="container">
@@ -141,28 +142,27 @@
           </div>
         </div>
       </div>
-    <!-- End best movies title cat1 Family-->
+      <!-- End best movies title cat1 Family-->
     </section>
 
-    <section>
-      <!-- best movies category 1 Family-->
-      <div class="container movie-container" id="best-movies-cat1">
-        <div class="row" id="best-family-movies">
-          <!-- here will be the data-->
-        </div>
+    <!-- best movies category 1 Family-->
+    <div class="container movie-container" id="best-movies-cat1">
+      <div class="row" id="best-family-movies">
+        <!-- here will be the data-->
       </div>
-      <!-- End best movies category 1 Family-->
+    </div>
+    <!-- End best movies category 1 Family-->
 
-      <!-- see more button-->
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-9 d-flex justify-content-center text-center">
-            <button type="button" class="btn btn-danger details-button toggle-button mt-2 pt-2 pb-2 px-4 py-4" data-target="#best-movies-cat1">Voir plus</button>
-          </div>
+    <!-- see more button-->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-9 d-flex justify-content-center text-center">
+          <button type="button" class="btn btn-danger details-button toggle-button mt-2 pt-2 pb-2 px-4 py-4"
+            data-target="#best-movies-cat1">Voir plus</button>
         </div>
       </div>
-      <!-- End see more button-->
-    </section>
+    </div>
+    <!-- End see more button-->
 
     <section>
       <!-- best movies title for cat2 Crime-->
@@ -175,26 +175,25 @@
       </div>
       <!-- End best movies title for cat2 Crime-->
     </section>
-    
-    <section>
-      <!-- best movies category 2 Crime-->
-      <div class="container movie-container" id="best-movies-cat2">
-        <div class="row" id="best-crime-movies">
-          <!-- here will be the data-->
-        </div>
-      </div>
-      <!-- End best movies category 2 Crime-->
 
-      <!-- see more button-->
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-9 d-flex justify-content-center text-center">
-            <button type="button" class="btn btn-danger toggle-button pt-2 pb-2 px-4 py-4" data-target="#best-movies-cat2">Voir plus</button>
-          </div>
+    <!-- best movies category 2 Crime-->
+    <div class="container movie-container" id="best-movies-cat2">
+      <div class="row" id="best-crime-movies">
+        <!-- here will be the data-->
+      </div>
+    </div>
+    <!-- End best movies category 2 Crime-->
+
+    <!-- see more button-->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-9 d-flex justify-content-center text-center">
+          <button type="button" class="btn btn-danger toggle-button pt-2 pb-2 px-4 py-4"
+            data-target="#best-movies-cat2">Voir plus</button>
         </div>
       </div>
-      <!-- End see more button-->
-    </section>
+    </div>
+    <!-- End see more button-->
 
     <section>
       <!-- best movies title other-->
@@ -236,28 +235,27 @@
           </div>
         </div>
       </div>
-    <!--End best movies title other-->
+      <!--End best movies title other-->
     </section>
 
-    <section>
-      <!-- Choosen category movies-->
-      <div class="container movie-container" id="best-category-movies-other">
-        <div class="row" id="best-form-movies">
-          <!-- here will be the data-->
-        </div>
+    <!-- Choosen category movies-->
+    <div class="container movie-container" id="best-category-movies-other">
+      <div class="row" id="best-form-movies">
+        <!-- here will be the data-->
       </div>
-      <!-- End Choosen category movies-->
+    </div>
+    <!-- End Choosen category movies-->
 
-      <!-- see more button-->
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-9 d-flex justify-content-center text-center">
-            <button type="button" class="btn btn-danger toggle-button details-button mt-2 pt-2 pb-2 px-4 py-4" data-target="#best-category-movies-other">Voir plus</button>
-          </div>
+    <!-- see more button-->
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-9 d-flex justify-content-center text-center">
+          <button type="button" class="btn btn-danger toggle-button details-button mt-2 pt-2 pb-2 px-4 py-4"
+            data-target="#best-category-movies-other">Voir plus</button>
         </div>
       </div>
-      <!-- End see more button-->
-    </section>
+    </div>
+    <!-- End see more button-->
 
   </main>
   <script src="script.js"></script>
@@ -267,4 +265,5 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>
